@@ -1,0 +1,40 @@
+{
+  "name": "nextjs-i18n-routes",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "genI18nRoutes": "tsc src/i18n-routes.ts",
+    "predev": "yarn genI18nRoutes",
+    "prebuild": "yarn genI18nRoutes",
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@formatjs/intl-localematcher": "^0.4.0",
+    "@types/node": "20.4.1",
+    "@types/react": "18.2.14",
+    "@types/react-dom": "18.2.6",
+    "lodash": "^4.17.21",
+    "negotiator": "^0.6.3",
+    "next": "13.4.9",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "typescript": "5.1.6"
+  },
+  "devDependencies": {
+    "@types/lodash": "^4.14.195",
+    "@types/negotiator": "^0.6.1"
+  },
+  "lint-staged": {
+    "*.@(ts|tsx)": [
+      "bash -c tsc --noEmit"
+    ],
+    "*.@(ts|tsx|js)": [
+      "prettier --write --ignore-unknown",
+      "eslint --fix"
+    ]
+  },
+  "prettier": "@untile/prettier-config"
+}
